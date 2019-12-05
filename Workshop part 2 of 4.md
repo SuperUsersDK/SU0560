@@ -7,8 +7,8 @@ Storage Spaces Direct (S2D)
 ---------------------------
 >
 >   You are to configure S2D on at least two virtual Server 2019 servers (not
->   the DC’s). If possible use Admin Center from the Workshop before to do the
->   configuration. If possible use the server core (SVR3) as one of the servers.
+>   the DC’s). Use the server SVR1 and SVR2 as some of the servers - SVR3 (server core) as an additional.
+>   Remember that SVR2 needs domain membership - and both SVR2 and SVR3 needs additional disks.
 >
 >   When done – do **not** revert virtual machines to Checkpoint.
 >
