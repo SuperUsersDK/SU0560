@@ -21,6 +21,9 @@ Windows Admin Center
 
 >   <https://www.altaro.com/hyper-v/5-ways-windows-admin-center-makes-managing-servers/>
 
+>   <https://www.virtualizationhowto.com/2019/10/managing-windows-server-2019-core-with-windows-admin-center/>
+
+
 >   Also the free e-book found in the link send to your email addresses can be
 >   used to do this.  
 >   The link also contains the slides from this course in PDF format and a
