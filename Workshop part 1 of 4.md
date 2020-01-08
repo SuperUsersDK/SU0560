@@ -6,8 +6,8 @@
 Windows Admin Center
 --------------------
 
->   You are to use Admin Center to do as many as many of the exercises from
->   Monday to Wednesday as possible. Also very important – use the server core
+>   You are to use Admin Center to do as many of the exercises from
+>   Monday to Wednesday as possible. Also very important – the server core
 >   (SVR3) must be administered from Admin Center.  
 >   If time permits make SVR3 a Hyper-V host (nested virtualization) and go
 >   through the Hyper-V management with Admin Center.
