@@ -12,9 +12,9 @@ promoting the server to a DC
 >   To install the AD DS role in Windows Server 2019, complete the following
 >   steps:
 
-1.  Start LON-DC! And LON-DC2.
+1.  Start DC1 And DC2.
 
-2.  Sign in to LON-DC1 with myorg\\administrator and Pa55w.rd
+2.  Sign in to DC2 with myorg\\administrator and Pa55w.rd
 
 3.  Click the **Start** button, and then, in the **Start** menu, click the
     **Server Manager** tile.
