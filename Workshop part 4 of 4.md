@@ -1,25 +1,17 @@
 >   **Workshop part 4 of 4**  
->   **Testing System Insights on Server 2019**
+>   **Distributed File System**
 
->   In this Workshop, you will test functionality of System Insights.
+>   In this Workshop, you will test DFS.
 
-System Insights
----------------
+Distributed File System on Server 2019
+--------------------------------------
 
->   You are to install System Insights on a member server. Configure another
->   member server as both destination and orchestrator server. Use PowerShell or
->   Windows Admin Center for all operations. Include all virtual (windows)
->   virtual machines in the readings.
+>   You are to create a complete DFS system with two servers.
 
->   Inspiration on how to accomplish this can be found on:  
->   <https://francescomolfese.it/en/2019/02/windows-server-2019-introduzione-a-system-insights/>
+>   Inspiration on how to accomplish this can be found on:
 
->   <https://community.spiceworks.com/how_to/162534-enable-system-insights-in-windows-server-2019>
+>   <https://techcommunity.microsoft.com/t5/failover-clustering/windows-server-2016-2019-cluster-resource-resource-types/ba-p/372163>
 
->   <https://4sysops.com/archives/what-is-windows-server-2019-system-insights/>
+>   <https://www.vembu.com/blog/distributed-file-system-dfs-windows-server-2016-brief-overview/>
 
->   <https://cloudblogs.microsoft.com/windowsserver/2018/06/19/introducing-windows-server-system-insights/>
-
->   <https://www.petri.com/getting-started-with-windows-server-2019-system-insights>
-
->   <https://www.thomasmaurer.ch/2018/09/windows-server-2019-system-insights/>
+>   <https://docs.microsoft.com/en-us/windows-server/storage/dfs-namespaces/dfs-overview>

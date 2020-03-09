@@ -1,30 +1,24 @@
 >   **Workshop part 2 of 4**  
->   **Creating Storage Spaces Direct in Server 2019**
->
->   In this Workshop, you will test functionality of Storage Spaces Direct.
->
-Storage Spaces Direct (S2D)
----------------------------
->
->   You are to configure S2D on at least two virtual Server 2019 servers (not
->   the DC’s). Use the server SVR1 and SVR2 as some of the servers - SVR3 (server core) as an additional.
->   Remember that SVR2 needs domain membership - and both SVR2 and SVR3 needs additional disks.
->
+>   **Using Windows Admin Center with Server 2019**
+
+>   In this Workshop, you will test how to use Windows Admin Center.
+
+Windows Admin Center
+--------------------
+
+>   You are to use Admin Center to do as many of the exercises from Monday to
+>   Wednesday as possible. Also very important – the server SVRCORE1 must be
+>   administered from Admin Center.  
+>   If time permits make SVRCORE1 a Hyper-V host (nested virtualization) and go
+>   through the Hyper-V management with Admin Center.
+
 >   When done – do **not** revert virtual machines to Checkpoint.
->
+
 >   Inspiration on how to accomplish this can be found on:  
->
->   <https://www.youtube.com/watch?v=raeUiNtMk0E>
->
->   <https://docs.microsoft.com/en-us/windows-server/storage/storage-spaces/deploy-storage-spaces-direct>
->
->   <https://www.vembu.com/blog/windows-server-2019-storage-spaces-direct-windows-admin-center/>
->
->   <https://www.sourceonetechnology.com/storage-spaces-direct/>
->
->   <https://www.vembu.com/blog/windows-server-2019-storage-spaces-direct-best-practices/>
->
->   <https://www.altaro.com/hyper-v/3-important-things-storage-spaces-direct/>
->
->   <https://www.vembu.com/blog/windows-server-2019-storage-spaces-direct-performance-history/>
->
+>   <https://www.starwindsoftware.com/blog/windows-admin-center-for-windows-server-2019-getting-started>
+
+>   <https://4sysops.com/archives/manage-windows-server-2019-with-admin-center-powershell-core-and-sconfig/>
+
+>   <https://www.altaro.com/hyper-v/5-ways-windows-admin-center-makes-managing-servers/>
+
+>   <https://www.virtualizationhowto.com/2019/10/managing-windows-server-2019-core-with-windows-admin-center/>

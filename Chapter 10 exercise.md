@@ -16,21 +16,25 @@ Starting the performance logs and alerts service
 >   To start the performance logs and alerts service in Windows Server 2019,
 >   complete the following steps:
 
-1.  Press the Windows key + *R*.
+1.  Select DC1 and SVR1 and start both if not already started.
 
-2.  Enter services.msc and press *Enter*.
+2.  When started, select SVR1 and click “Connect”. When possible, sign in as
+    myorg\\administrator and Pa55w.rd
 
-3.  From the list of services, locate the **Performance Logs & Alerts** (see
-    *Figure 10.14*) service to check its status.
+3.  Press the Windows key + *R*.
 
-4.  If it is stopped, then right-click and select **Start**.
+4.  Enter *services.msc* and press *Enter*.
 
-5.  Close the **Services** window:
+5.  From the list of services, locate the **Performance Logs & Alerts** service
+    to check its status.
 
-![](media/675eda3893800888ee9febdabdd69fff.jpg)
+6.  If it is stopped, then right-click and select **Start**.
 
->   Now that we have started the performance logs and alerts service, let's move
->   to our next task of accessing the Performance Monitor logs folder.
+7.  Close the **Services** window:
+
+>   Now that we have started the performance logs and alerts service,  
+>   let's move to our next task of accessing the Performance Monitor logs
+>   folder.
 
 Accessing the Performance Monitor logs folder
 ---------------------------------------------
@@ -42,9 +46,7 @@ Accessing the Performance Monitor logs folder
 
 2.  Enter C: and press *Enter.*
 
-3.  The PerfLogs folder appears, as shown in *Figure 10.15*:
-
-![](media/4016af9d453da558ae412d4429076bc1.jpg)
+3.  The PerfLogs folder appears.
 
 >   Moving forward, let's now create some performance data logs.
 
@@ -66,18 +68,16 @@ Creating performance data logs
 5.  Choose the **Create data logs** option and the **Performance counter**
     sub-option, and then click **Next**.
 
-6.  Click the **Add** button to add counters, as shown in *Figure 10.16*,
-    specify the time interval, and then click **Next**:
+6.  Click the **Add** button to add counters, specify the time interval, and
+    then click **Next**.
 
-![](media/ff2a41910daf89a677e7d6ed587b6ba6.jpg)
-
-1.  Check that the default folder for saving data logs is the PerfLogs folder,
+7.  Check that the default folder for saving data logs is the PerfLogs folder,
     and then click **Next**.
 
-2.  Set the user in **Run as**, and select the **Start this data collector set
+8.  Set the user in **Run as**, and select the **Start this data collector set
     now** option.
 
-3.  Click **Finish**.
+9.  Click **Finish**.
 
 >   Finally, let's now set up performance counter alerts.
 
@@ -91,15 +91,15 @@ Setting up performance counter alerts
 
 2.  Choose **Performance Counter Alert**, and then click **Next**.
 
-3.  Click the **Add** button to add counters, as shown in *Figure 10.17*,
-    specify an alert limit, and then click **Next**:
+3.  Click the **Add** button to add counters, specify an alert limit, and then
+    click **Next**.
 
-![](media/6dd0f6f887190bbca48bef5c0a72af46.jpg)
-
-1.  Set the user in **Run as**, and select the **Start this data collector set
+4.  Set the user in **Run as**, and select the **Start this data collector set
     now** option.
 
-2.  Click **Finish**.
+5.  Click **Finish**.
+
+6.  After this exercise leave the virtual machines running.
 
 >   This was a nice exercise as it covered various examples of performance logs
 >   and alerts in Windows Server 2019.

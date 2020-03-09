@@ -1,30 +1,28 @@
 >   **Workshop part 1 of 4**  
->   **Using Windows Admin Center with Server 2019**
+>   **Testing System Insights on Server 2019**
 
->   In this Workshop, you will test how to use Windows Admin Center.
+>   In this Workshop, you will test functionality of System Insights.
 
-Windows Admin Center
---------------------
+System Insights
+---------------
 
->   You are to use Admin Center to do as many of the exercises from
->   Monday to Wednesday as possible. Also very important – the server core
->   (SVR3) must be administered from Admin Center.  
->   If time permits make SVR3 a Hyper-V host (nested virtualization) and go
->   through the Hyper-V management with Admin Center.
+>   You are to install System Insights on a member server (SVR1 or SVR2).
+>   Configure another member server as both destination and orchestrator server.
 
->   When done – do **not** revert virtual machines to Checkpoint.
+>   Use PowerShell or Windows Admin Center for all operations.
 
->   Inspiration on how to accomplish this can be found on:  
->   <https://www.starwindsoftware.com/blog/windows-admin-center-for-windows-server-2019-getting-started>
+>   Include all virtual (windows) virtual machines in the readings.
 
->   <https://4sysops.com/archives/manage-windows-server-2019-with-admin-center-powershell-core-and-sconfig/>
+>   Inspiration on how to accomplish this can be found on:
 
->   <https://www.altaro.com/hyper-v/5-ways-windows-admin-center-makes-managing-servers/>
+>   <https://francescomolfese.it/en/2019/02/windows-server-2019-introduzione-a-system-insights/>
 
->   <https://www.virtualizationhowto.com/2019/10/managing-windows-server-2019-core-with-windows-admin-center/>
+>   <https://community.spiceworks.com/how_to/162534-enable-system-insights-in-windows-server-2019>
 
+>   <https://4sysops.com/archives/what-is-windows-server-2019-system-insights/>
 
->   Also the free e-book found in the link send to your email addresses can be
->   used to do this.  
->   The link also contains the slides from this course in PDF format and a
->   separate file with all the web links used in the slides.
+>   <https://cloudblogs.microsoft.com/windowsserver/2018/06/19/introducing-windows-server-system-insights/>
+
+>   <https://www.petri.com/getting-started-with-windows-server-2019-system-insights>
+
+>   <https://www.thomasmaurer.ch/2018/09/windows-server-2019-system-insights/>

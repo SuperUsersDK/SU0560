@@ -3,6 +3,9 @@
 >   In this chapter exercise, you will get acquainted with some GPOs that may be
 >   of interest to system admins:
 
+>   The local administrator account and Guest account is by default disabled on
+>   CL1 but you want to restrict the use by applying the following settings:
+
 >   Renaming the administrator account
 
 >   Disabling the guest account
@@ -22,57 +25,54 @@ To check default Windows settings ,do the following:
 
 2.  Right click Windows button and choose Computer Management.
 
-3.  Click “Local Users and Groups, then Users and see that the Guest account is
-    named Guest and that the Administrator account is named Administrator.
+3.  Click “Local Users and Groups, then Users and see that the Administrator
+    account is named Administrator.
 
 4.  Check to see if you can get access to Settings from the Start Menu and
     Control Panel by searching in the Start Menu. Both should work.
 
-Renaming the administrator account
-----------------------------------
-
->   To rename the administrator account using the GPO in Windows Server 2019,
->   complete the following steps:
-
-1.  Navigate to the following path to reach the GPO: Computer
-
->   Configuration\\Policies\\Windows Settings\\SecuritySettings\\Local
-
->   Policies\\Security Options
-
-1.  Double click at **Accounts: Rename administrator account**
-
-2.  In the *Properties* dialog box, check the box for **Define this policy
-    setting**, and enter the new name that you want to use for the administrator
-    account
-
-3.  Click **OK** to close the *Properties* dialog box
-
->   This policy is being applied to computer configuration settings.
-
->   Securing the network services in particular, and the whole network of the
->   organization in general, are among the highest priorities. For that reason,
->   it is recommended to rename the administrator account in Windows Server 2019
->   to avoid the its misuse. So let us rename the guest account using GPO.
-
-Renaming the guest account
---------------------------
+Disabling the guest account and rename administrator
+----------------------------------------------------
 
 >   To rename the guest account using the GPO in Windows Server 2019, complete
 >   the following steps:
 
-1.  Navigate to the following path to reach the GPO: Computer
+1.  Sign in to DC1 virtual maching.
 
->   Configuration\\Policies\\Windows Settings\\SecuritySettings\\Local
+2.  From tools menu in server manager select and open “Active Directory Users
+    and Computers”.
 
->   Policies\\Security Options
+3.  Right-click Myorg.local domain and create a new ou called Client computers
 
-1.  Double click at **Accounts: Rename guest account**
+4.  Right-click on CL1 computer object in the computers folder and select
+    **move** to move cl1 to the new OU you have just created.
 
-2.  In the *Properties* dialog box, check the box for **Define this policy
-    setting**, and enter the new name that you want to use for the guest account
+5.  Close “Active Directory Users and Computers” tool
 
-3.  Click **OK** to close the *Properties* dialog box
+6.  Select tools on the menun bar in the server manager and open “Group Policy
+    Management” tool.
+
+7.  Right-click the new **Client computers** OU an select “**create a GPO in
+    this domain and link it here…**” and name it “Client Restrictions”.
+
+8.  Right-click Client Restrictions GPO and select Edit. Navigate to the
+    following path to reach the GPO setting: **Computer
+    Configuration\\Policies\\Windows Settings\\Security Settings\\Local
+    Policies\\Security Options**
+
+9.  Double click at **Accounts: Guest account status**
+
+10. In the *Properties* dialog box, check the box for **Define this policy
+    setting**, and select Disabled.
+
+11. Click **OK** to close the *Properties* dialog box
+
+12. Double click at **Accounts: Rename Administrator account**
+
+13. In the *Properties* dialog box, check the box for **Define this policy
+    setting**, and type in **Admin** as the new administrator name.
+
+14. Click **OK** to close the *Properties* dialog box
 
 >   This policy is being applied to computer configuration settings. For
 >   security reasons, to minimize the chance of misusing the guest account, you
@@ -85,19 +85,17 @@ Blocking the Microsoft accounts
 >   To block the Microsoft accounts using the GPO in Windows Server 2019,
 >   complete the following steps:
 
-1.  Navigate to the following path to reach the GPO: Computer
+1.  Navigate to the following path to reach the GPO: **Computer
+    Configuration\\Policies\\Windows Settings\\Security Settings\\Local
+    Policies\\Security Options**
 
->   Configuration\\Policies\\Windows Settings\\SecuritySettings\\Local
+2.  Double click at **Accounts: Block Microsoft accounts**
 
->   Policies\\Security Options
-
-1.  Double click at **Accounts: Block Microsoft accounts**
-
-2.  In the *Properties* dialog box, check the box for **Define this policy
+3.  In the *Properties* dialog box, check the box for **Define this policy
     setting**, and then select **Users can't add or log on with Microsoft
-    accounts** from the dropdown combo list
+    accounts** from the dropdown combo list.
 
-3.  Click **OK** to close the *Properties* dialog box
+4.  Click **OK** to close the *Properties* dialog box
 
 >   This policy is being applied to user configuration settings.
 
@@ -114,13 +112,12 @@ Prohibiting access to the Control Panel and PC settings
 >   To prohibit access to the Control Panel and PC settings using the GPO in
 >   Windows Server 2019, complete the following steps:
 
-1.  Navigate to the following path to reach the GPO: User
+1.  Navigate to the following path to reach the GPO: **User
+    Configuration\\Policies\\AdministrativeTemplates\\Control Panel**
 
->   Configuration\\Policies\\AdministrativeTemplates\\Control Panel
+2.  Double click at **Prohibit access to the Control Panel and PC settings**
 
-1.  Double click at **Prohibit access to the Control Panel and PC settings**
-
-2.  In the dialog box, select the **Enable** option, and then click **OK** to
+3.  In the dialog box, select the **Enable** option, and then click **OK** to
     close the dialog box
 
 >   This policy is being applied to users configuration settings.
@@ -136,15 +133,13 @@ Denying access to all removable storage classes
 >   To deny access to all removable storage classes using the GPO in Windows
 >   Server 2019, complete the following steps:
 
-1.  Navigate the following path to reach the GPO: User
+1.  Navigate the following path to reach the GPO settings: **User
+    Configuration\\Policies\\AdministrativeTemplates\\System\\Removable Storage
+    Access**
 
->   Configuration\\Policies\\AdministrativeTemplates\\System\\Removable
+2.  Double click at **All the removable storage classes: Deny all access**
 
->   Storage Access
-
-1.  Double click at **All the removable storage classes: Deny all access**
-
-2.  In the dialog box, select the **Enable** option, and then click **OK** to
+3.  In the dialog box, select the **Enable** option, and then click **OK** to
     close the dialog box
 
 >   This policy is being applied to users configuration settings.
