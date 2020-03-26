@@ -57,7 +57,7 @@ Installing the web server (IIS) role
 
 2.  Sign in to CL1 and open Edge browser.
 
-3.  Type HTTP://DC.myorg.local
+3.  Type HTTP://SVR1.myorg.local
 
 Installing a PDS role
 ---------------------
