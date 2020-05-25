@@ -17,7 +17,7 @@ Downloading Windows Admin Center
     **myorg\\administrator** with **Pa55w.rd**.
 
 4.  Open up the browser and go to
-    [https://​www​.microsoft​.com​/​en-us​/cloud-platform/windows​-admin​-cente​r](https://www.microsoft.com/en-us/cloud-platform/windows-admin-center).
+    https://www.microsoft.com/en-us/evalcenter/evaluate-windows-admin-center.
 
 5.  On the Windows Admin Center download site, click the **Download Windows
     Admin Center** button.
