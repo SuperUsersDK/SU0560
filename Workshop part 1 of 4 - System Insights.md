@@ -7,7 +7,6 @@ System Insights
 ---------------
 
 >   You are to install System Insights on a member server (SVR1 or SVR2).
->   Configure another member server as both destination and orchestrator server.
 
 >   Use PowerShell or Windows Admin Center for all operations.
 
@@ -16,6 +15,8 @@ System Insights
 >   Inspiration on how to accomplish this can be found on:
 
 >   <https://docs.microsoft.com/en-us/windows-server/manage/system-insights/overview>
+
+>   <https://francescomolfese.it/en/2019/02/windows-server-2019-introduzione-a-system-insights/>
 
 >   <https://community.spiceworks.com/how_to/162534-enable-system-insights-in-windows-server-2019>
 
