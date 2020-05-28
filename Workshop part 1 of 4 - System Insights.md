@@ -15,7 +15,7 @@ System Insights
 
 >   Inspiration on how to accomplish this can be found on:
 
->   <https://francescomolfese.it/en/2019/02/windows-server-2019-introduzione-a-system-insights/>
+>   <https://docs.microsoft.com/en-us/windows-server/manage/system-insights/overview>
 
 >   <https://community.spiceworks.com/how_to/162534-enable-system-insights-in-windows-server-2019>
 
