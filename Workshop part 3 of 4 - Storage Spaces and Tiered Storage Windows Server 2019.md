@@ -55,9 +55,9 @@ Run this script first on your Hyper-V host with SVR1 in OFF state
 
 	\#This section must be run from the host (Copy into Powershell ISE)
 
-	\$VMName = "SVR1"
+	$VMName = "SVR1"
 
-	\$VMPath = "C:\\Hyper-V"
+	$VMPath = "C:\\Hyper-V"
 
 	[bool]\$AddStorageDisks = \$true
 
@@ -69,19 +69,19 @@ Run this script first on your Hyper-V host with SVR1 in OFF state
 
 	\# Create the Storage Disk VHDs and attach to Storage Server VM
 
-	\$VHDPath = \$VMPath
+	$VHDPath = \$VMPath
 
-	\$i=0
+	$i=0
 
 	ForEach (\$\_ in 1..5)
 
 	{
 
-	\$i++
+	$i++
 
-	\$DiskName = \$VMName + "HDDDisk0" + \$i + ".vhdx"
+	$DiskName = \$VMName + "HDDDisk0" + \$i + ".vhdx"
 
-	\$VHDFile = "\$VHDPath\\\$DiskName"
+	$VHDFile = "\$VHDPath\\\$DiskName"
 
 	Write-Verbose "New-VHD - Creating VHDFile [\$VHDFile] Size 10GB"
 
@@ -99,11 +99,11 @@ Run this script first on your Hyper-V host with SVR1 in OFF state
 
 	{
 
-	\$i++
+	$i++
 
-	\$DiskName = \$VMName + "SSDDisk0" + \$i + ".vhdx"
+	$DiskName = \$VMName + "SSDDisk0" + \$i + ".vhdx"
 
-	\$VHDFile = "\$VHDPath\\\$DiskName"
+	$VHDFile = "\$VHDPath\\\$DiskName"
 
 	Write-Verbose "New-VHD - Creating VHDFile [\$VHDFile] Size 5GB"
 
