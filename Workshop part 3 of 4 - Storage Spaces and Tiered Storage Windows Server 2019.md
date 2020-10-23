@@ -47,122 +47,126 @@ Storage Spaces and Tiered Storage
 After this workshop make sure that you remove the created disks from SVR1 and
 delete the VHDX files.
 
-\#_____________________________________________________________________________________\_
+Run this script first on your Hyper-V host with SVR1 in OFF state
 
-\#Make sure that SVR1 has been shut down before running this section
+	\#_____________________________________________________________________________________\_
 
-\#This section must be run from the host (Copy into Powershell ISE)
+	\#Make sure that SVR1 has been shut down before running this section
 
-\$VMName = "SVR1"
+	\#This section must be run from the host (Copy into Powershell ISE)
 
-\$VMPath = "C:\\Hyper-V"
+	\$VMName = "SVR1"
 
-[bool]\$AddStorageDisks = \$true
+	\$VMPath = "C:\\Hyper-V"
 
-function AddStorageDisks
+	[bool]\$AddStorageDisks = \$true
 
-{
+	function AddStorageDisks
 
-\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#
+	{
 
-\# Create the Storage Disk VHDs and attach to Storage Server VM
+	\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#
 
-\$VHDPath = \$VMPath
+	\# Create the Storage Disk VHDs and attach to Storage Server VM
 
-\$i=0
+	\$VHDPath = \$VMPath
 
-ForEach (\$\_ in 1..5)
+	\$i=0
 
-{
+	ForEach (\$\_ in 1..5)
 
-\$i++
+	{
 
-\$DiskName = \$VMName + "HDDDisk0" + \$i + ".vhdx"
+	\$i++
 
-\$VHDFile = "\$VHDPath\\\$DiskName"
+	\$DiskName = \$VMName + "HDDDisk0" + \$i + ".vhdx"
 
-Write-Verbose "New-VHD - Creating VHDFile [\$VHDFile] Size 10GB"
+	\$VHDFile = "\$VHDPath\\\$DiskName"
 
-New-VHD -path \$VHDFile -Size 10GB -Fixed \| Out-Null
+	Write-Verbose "New-VHD - Creating VHDFile [\$VHDFile] Size 10GB"
 
-Write-Verbose "Add-VMHardDiskDrive - Attaching [\$VHDFile] to VM \$VMName"
+	New-VHD -path \$VHDFile -Size 10GB -Fixed \| Out-Null
 
-Add-VMHardDiskDrive -VMName \$VMName -Path \$VHDFile -ControllerType SCSI
+	Write-Verbose "Add-VMHardDiskDrive - Attaching [\$VHDFile] to VM \$VMName"
 
-}
+	Add-VMHardDiskDrive -VMName \$VMName -Path \$VHDFile -ControllerType SCSI
 
-\$i=0
+	}
 
-ForEach (\$\_ in 1..5)
+	\$i=0
 
-{
+	ForEach (\$\_ in 1..5)
 
-\$i++
+	{
 
-\$DiskName = \$VMName + "SSDDisk0" + \$i + ".vhdx"
+	\$i++
 
-\$VHDFile = "\$VHDPath\\\$DiskName"
+	\$DiskName = \$VMName + "SSDDisk0" + \$i + ".vhdx"
 
-Write-Verbose "New-VHD - Creating VHDFile [\$VHDFile] Size 5GB"
+	\$VHDFile = "\$VHDPath\\\$DiskName"
 
-New-VHD -path \$VHDFile -Size 5GB -Fixed \| Out-Null
+	Write-Verbose "New-VHD - Creating VHDFile [\$VHDFile] Size 5GB"
 
-Write-Verbose "Add-VMHardDiskDrive - Attaching [\$VHDFile] to VM \$VMName"
+	New-VHD -path \$VHDFile -Size 5GB -Fixed \| Out-Null
 
-Add-VMHardDiskDrive -VMName \$VMName -Path \$VHDFile -ControllerType SCSI
+	Write-Verbose "Add-VMHardDiskDrive - Attaching [\$VHDFile] to VM \$VMName"
 
-}
+	Add-VMHardDiskDrive -VMName \$VMName -Path \$VHDFile -ControllerType SCSI
 
-}
+	}
 
-Write-Verbose "Set VM DynamicMemory and ProcessorCount 2"
+	}
 
-Set-VM -Name \$VMName -DynamicMemory -ProcessorCount 2
+	Write-Verbose "Set VM DynamicMemory and ProcessorCount 2"
 
-Write-Verbose "Set VM for Virtualization Extensions"
+	Set-VM -Name \$VMName -DynamicMemory -ProcessorCount 2
 
-Set-VMProcessor -VMName \$VMName -ExposeVirtualizationExtensions \$true
+	Write-Verbose "Set VM for Virtualization Extensions"
 
-Write-Verbose "Enable Mac Address Spoofing"
+	Set-VMProcessor -VMName \$VMName -ExposeVirtualizationExtensions \$true
 
-Get-VMNetworkAdapter -VMName \$VMName \| Set-VMNetworkAdapter
--MacAddressSpoofing On
+	Write-Verbose "Enable Mac Address Spoofing"
 
-if (\$AddStorageDisks)
+	Get-VMNetworkAdapter -VMName \$VMName \| Set-VMNetworkAdapter
+	-MacAddressSpoofing On
 
-{
+	if (\$AddStorageDisks)
 
-Write-Verbose "Adding Storage Disks to VM"
+	{
 
-AddStorageDisks
+	Write-Verbose "Adding Storage Disks to VM"
 
-}
+	AddStorageDisks
 
-\#_____________________________________________________________________________\_
+	}
+	
+Run next script on LON-SVR1
 
-\# Start svr1 and sign in with myorg.local\\administrator Pa55w.rd
+	\#_____________________________________________________________________________\_
 
-\# Open up Powershell Ise as administrator
+	\# Start svr1 and sign in with myorg.local\\administrator Pa55w.rd
 
-\# Run this commands from within SVR1 vm
+	\# Open up Powershell Ise as administrator
 
-Get-PhysicalDisk \| ? Size -lt 6GB \| Set-PhysicalDisk –Usage Retired
+	\# Run this commands from within SVR1 vm
 
-Get-PhysicalDisk -Usage Retired \| Set-PhysicalDisk –MediaType SSD
+	Get-PhysicalDisk \| ? Size -lt 6GB \| Set-PhysicalDisk –Usage Retired
 
-Get-PhysicalDisk -Usage Retired \| Set-PhysicalDisk -Usage AutoSelect
+	Get-PhysicalDisk -Usage Retired \| Set-PhysicalDisk –MediaType SSD
 
-Get-PhysicalDisk \| ? Size -lt 11GB \|? Size -gt 6GB \| Set-PhysicalDisk –Usage
-Retired
+	Get-PhysicalDisk -Usage Retired \| Set-PhysicalDisk -Usage AutoSelect
 
-Get-PhysicalDisk -Usage Retired \| Set-PhysicalDisk –MediaType HDD
+	Get-PhysicalDisk \| ? Size -lt 11GB \|? Size -gt 6GB \| Set-PhysicalDisk –Usage
+	Retired
 
-Get-PhysicalDisk -Usage Retired \| Set-PhysicalDisk -Usage AutoSelect
+	Get-PhysicalDisk -Usage Retired \| Set-PhysicalDisk –MediaType HDD
 
-\#_____________________________________________________________________________\_
+	Get-PhysicalDisk -Usage Retired \| Set-PhysicalDisk -Usage AutoSelect
 
-\# you are now ready for trying out the workshop creating a tired storage space
-with ssd and hdd
+	\#_____________________________________________________________________________\_
+
+	\# you are now ready for trying out the workshop creating a tired storage space
+	with ssd and hdd
 
 \#For more info
 
