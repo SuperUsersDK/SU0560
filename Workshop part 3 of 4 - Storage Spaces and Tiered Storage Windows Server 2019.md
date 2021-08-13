@@ -112,7 +112,7 @@ Write-Verbose "Add-VMHardDiskDrive - Attaching [$VHDFile] to VM $VMName"
 Add-VMHardDiskDrive -VMName $VMName -Path $VHDFile -ControllerType SCSI
 
 }
-
+}
 Write-Verbose "Set VM DynamicMemory and ProcessorCount 2"
 
 Set-VM -Name $VMName -DynamicMemory -ProcessorCount 2
